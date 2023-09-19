@@ -1,9 +1,18 @@
 'use strict';
 
+/**
+ * Рекурсивная ф-ия запускающая игру Угадай число
+ * @param {int} randomNumber число загаданное компьютером.
+ * @param {int} userNumber вариант отгадки пользователя
+*/
 function randomNumber() {
   const randomNumber = Math.round(Math.random() * 100);
   let userNumber;
 
+  /**
+   * Рекурсивная ф-ия проверки числа
+   * @param {int} userNumber вариант отгадки пользователя
+  */
   function guessTheNumber() {
     userNumber = +prompt('Отгадайте число от 1 до 100', '');
 

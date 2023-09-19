@@ -1,19 +1,24 @@
 'use strict';
 
-function recursive (arr) {
+/**
+ * Рекурсивная ф-ия возвращающая массив
+ * @param {int} arr Возвращаемый массив.
+ * @return {int} arr Возвращаемый массив
+*/
+function recursive(arr) {
   const integNumber = Math.round(Math.random() * 10);
-  let newArr = [...arr, integNumber]
+  const newArr = [...arr, integNumber];
   console.log('число', integNumber);
   console.log('массив', newArr);
 
-  const sumArr = newArr.reduce((acc, numb) => 
-  acc +=numb , 0);
+  const sumArr = newArr.reduce((acc, numb) =>
+    acc += numb, 0);
 
   console.log('sum', sumArr);
 
-  if(sumArr >= 50) {
+  if (sumArr >= 50) {
     return newArr;
-  };
+  }
 
   return recursive(newArr);
 }
